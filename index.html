@@ -1,49 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Personal Bio</title>
+  <meta charset="UTF-8">
+  <title>Nested Image Description Layout</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Welcome to My Bio Page</h1>
-  <hr>
+  <div class="main-div">
+    <div class="middle-div">
+      <div class="container">
 
-  <!-- About Me Section -->
-  <div>
-    <h2>About Me</h2>
-    <p>My name is <strong>Siru Ghimire</strong>. I am currently a student at <mark>Presidential Graduate School</mark>. I live in <i>Kathmandu, Nepal</i>.</p>
-    <p><small>This is a simple student bio project.</small></p>
+        <!-- First content block -->
+        <div class="item">
+          <div class="image-div">
+            <a href="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=1200" target="_blank">
+              <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=600" alt="Unsplash Image">
+            </a>
+          </div>
+          <div class="desc-div">
+            <div>This is a free image from Unsplash, perfect for creative and personal use in your web designs.</div>
+          </div>
+        </div>
+
+        <!-- Second content block -->
+        <div class="item">
+          <div class="image-div">
+            <a href="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?w=1200" target="_blank">
+              <img src="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?w=600" alt="Elephant from Pexels">
+            </a>
+          </div>
+          <div class="desc-div">
+            <div>An elephant from Pexels—ideal for nature-themed websites or educational wildlife projects.</div>
+          </div>
+        </div>
+
+        <!-- Third content block -->
+        <div class="item">
+          <div class="image-div">
+            <a href="https://images.pexels.com/photos/731911/pexels-photo-731911.jpeg?w=1200" target="_blank">
+              <img src="https://images.pexels.com/photos/731911/pexels-photo-731911.jpeg?w=600" alt="Creative Arts">
+            </a>
+          </div>
+          <div class="desc-div">
+            <div>This is a creative arts photo from Pexels, suitable for portfolios and design-based content.</div>
+          </div>
+        </div>
+
+        <!-- Fourth content block -->
+        <div class="item">
+          <div class="image-div">
+            <a href="https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg?w=1200" target="_blank">
+              <img src="https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg?w=600" alt="Getty Newsroom">
+            </a>
+          </div>
+          <div class="desc-div">
+            <div>A professional newsroom photo – high-quality media content used in journalism and news websites.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <!-- Hobbies Section -->
-  <div>
-    <h2>My Hobbies</h2>
-    <p>I enjoy <em>reading books</em>, watching movies, and learning to code.</p>
-    <br>
-    <p>I also love spending time with friends and exploring new places.</p>
-  </div>
-
-  <!-- Goals Section -->
-  <div>
-    <h2>My Goals</h2>
-    <p><b>Current Goal:</b> To become a skilled software developer and work in the tech industry.</p>
-    <p>I want to contribute to open-source projects and become part of a global tech community.</p>
-  </div>
-
-  <!-- Contact Section -->
-  <div>
-    <h2>Contact Information</h2>
-    <p><strong>Email:</strong> <u>siru.ghimire646@gmail.com</u></p>
-    <p><strong>Phone:</strong> +977-9804529410</p>
-    <p><strong>Location:</strong> Kathmandu, Nepal</p>
-    <p>Visit my <a href="https://github.com/sirughimire" target="_blank">GitHub profile</a>.</p>
-  </div>
-
-  <!-- Academic Background Section -->
-<div>
-  <h2>Academic Background</h2>
-  <p>I am currently pursuing a Bachelor's degree in Computer Science at Presidential Graduate School.</p>
-  <p>My coursework includes topics like Data Structures, Algorithms, Web Technologies, and Logic Design.</p>
-  <p>I’ve studied number systems such as hexadecimal (base 16), binary (base 2<sup>n</sup>)
-  <p>In digital logic, we often use symbols like CO<sub>2</sub> sensors or H<sub>2</sub>O simulation for environmental applications.</p>
-</div>
+</body>
+</html>
