@@ -1,67 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Nested Image Description Layout</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nature + Display Example</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .styled-paragraph {
+      color: darkblue;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      margin-bottom: 10px;
+    }
+    #extraPara {
+      color: darkgreen;
+      font-weight: bold;
+      font-style: italic;
+      font-size: 20px;
+    }
+    #togglePara, #demo {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #f0f0f0;
+      border-left: 4px solid #555;
+      font-size: 16px;
+      font-family: Verdana;
+    }
+    button {
+      padding: 8px 14px;
+      font-size: 15px;
+      cursor: pointer;
+      background-color: teal;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: darkcyan;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="main-div">
-    <div class="middle-div">
-      <div class="container">
+<!-- First Section: Show Paragraphs -->
+<p>This is a paragraph with a <button id="btnShowParas">Click Me</button></p>
 
-        <!-- First content block -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=1200" target="_blank">
-              <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=600" alt="Unsplash Image">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>This is a free image from Unsplash, perfect for creative and personal use in your web designs.</div>
-          </div>
-        </div>
+<div id="paraContainer" class="hidden">
+  <p class="styled-paragraph">Paragraph 1: Nature calms our minds and heals our souls with its peaceful presence.</p>
+  <p class="styled-paragraph">Paragraph 2: The sound of birds chirping and leaves rustling is a melody no music can replace.</p>
+  <p class="styled-paragraph">Paragraph 3: Walking barefoot on grass connects us to the earth in the most pure way.</p>
+  <p class="styled-paragraph">Paragraph 4: Sunrises and sunsets paint the sky with colors only nature can create.</p>
+  <p class="styled-paragraph">Paragraph 5: Every tree, river, and mountain tells a story of life, balance, and beauty.</p>
 
-        <!-- Second content block -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?w=1200" target="_blank">
-              <img src="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?w=600" alt="Elephant from Pexels">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>An elephant from Pexels—ideal for nature-themed websites or educational wildlife projects.</div>
-          </div>
-        </div>
+  <button id="btnShowExtra">Show Extra Paragraph</button>
 
-        <!-- Third content block -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.pexels.com/photos/731911/pexels-photo-731911.jpeg?w=1200" target="_blank">
-              <img src="https://images.pexels.com/photos/731911/pexels-photo-731911.jpeg?w=600" alt="Creative Arts">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>This is a creative arts photo from Pexels, suitable for portfolios and design-based content.</div>
-          </div>
-        </div>
+  <p id="extraPara" class="hidden">
+    Nature is the ultimate source of peace and inspiration. From towering mountains to quiet forests, it teaches us to be still and observe. It reminds us that growth takes time, and beauty can be found even in the smallest details. Protecting nature is not just a duty—it’s a way of preserving life itself.
+  </p>
 
-        <!-- Fourth content block -->
-        <div class="item">
-          <div class="image-div">
-            <a href="https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg?w=1200" target="_blank">
-              <img src="https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg?w=600" alt="Getty Newsroom">
-            </a>
-          </div>
-          <div class="desc-div">
-            <div>A professional newsroom photo – high-quality media content used in journalism and news websites.</div>
-          </div>
-        </div>
+  <!-- Display: none vs block explanation -->
+  <p id="togglePara" class="hidden">
+    This paragraph is a live example of <strong>display: none</strong> and <strong>display: block</strong>.<br><br>
+    When hidden, it uses <code>display: none</code> — it's completely removed from the screen.<br>
+    When visible, it uses <code>display: block</code> — it appears and takes space.<br>
+    This is useful in menus, buttons, modals, etc.
+  </p>
+</div>
 
-      </div>
-    </div>
-  </div>
+<!-- Second Section: Style Change Example -->
+<hr><br>
+<button onclick="myFunction()">Show Style Change Paragraph</button>
+
+<p id="demo" style="display: none;">
+  JavaScript can change the style of any HTML element.<br><br>
+  <button onclick="changeStyle()">Change Style</button>
+</p>
+
+<!-- JavaScript -->
+<script>
+  const btnShowParas = document.getElementById('btnShowParas');
+  const paraContainer = document.getElementById('paraContainer');
+  const btnShowExtra = document.getElementById('btnShowExtra');
+  const extraPara = document.getElementById('extraPara');
+  const togglePara = document.getElementById('togglePara');
+
+  // Show 5 paragraphs + display explanation
+  btnShowParas.addEventListener('click', () => {
+    paraContainer.classList.remove('hidden');
+
+    const paras = paraContainer.querySelectorAll('.styled-paragraph');
+    paras.forEach(p => {
+      p.style.color = 'green';
+      p.style.fontWeight = '600';
+      p.style.fontSize = '16px';
+    });
+
+    togglePara.classList.remove('hidden');
+    alert("Nature-themed paragraphs are now visible and styled!");
+  });
+
+  // Show extra nature paragraph, hide explanation
+  btnShowExtra.addEventListener('click', () => {
+    extraPara.classList.remove('hidden');
+    togglePara.classList.add('hidden');
+    alert("Extra paragraph about nature is now visible!");
+  });
+
+  // Style Change Button Example
+  function myFunction() {
+    const demo = document.getElementById("demo");
+    demo.style.display = "block";
+    demo.style.fontSize = "20px";
+    demo.style.color = "white";
+    demo.style.backgroundColor = "red";
+    alert("Paragraph is now shown with initial styles.");
+  }
+
+  function changeStyle() {
+    const demo = document.getElementById("demo");
+    demo.style.fontSize = "30px";
+    demo.style.color = "white";
+    demo.style.backgroundColor = "green";
+    alert("Style changed to new font size and background!");
+  }
+</script>
 
 </body>
 </html>
