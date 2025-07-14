@@ -1,132 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nature + Display Example</title>
+  <meta charset="UTF-8">
+  <title>Medicine Store</title>
   <style>
-    .hidden {
-      display: none;
-    }
-    .styled-paragraph {
-      color: darkblue;
-      font-size: 18px;
+    body {
       font-family: Arial, sans-serif;
-      margin-bottom: 10px;
+      background-color: #e3f2fd;
+      text-align: center;
     }
-    #extraPara {
-      color: darkgreen;
+    h1 {
+      color: #0d47a1;
+    }
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product {
+      border: 2px solid #90caf9;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: white;
+      width: 200px;
+    }
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+    .product a {
+      text-decoration: none;
+      color: #1565c0;
       font-weight: bold;
-      font-style: italic;
-      font-size: 20px;
-    }
-    #togglePara, #demo {
-      margin-top: 20px;
-      padding: 12px;
-      background-color: #f0f0f0;
-      border-left: 4px solid #555;
-      font-size: 16px;
-      font-family: Verdana;
-    }
-    button {
-      padding: 8px 14px;
-      font-size: 15px;
-      cursor: pointer;
-      background-color: teal;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: darkcyan;
     }
   </style>
 </head>
 <body>
-
-<!-- First Section: Show Paragraphs -->
-<p>This is a paragraph with a <button id="btnShowParas">Click Me</button></p>
-
-<div id="paraContainer" class="hidden">
-  <p class="styled-paragraph">Paragraph 1: Nature calms our minds and heals our souls with its peaceful presence.</p>
-  <p class="styled-paragraph">Paragraph 2: The sound of birds chirping and leaves rustling is a melody no music can replace.</p>
-  <p class="styled-paragraph">Paragraph 3: Walking barefoot on grass connects us to the earth in the most pure way.</p>
-  <p class="styled-paragraph">Paragraph 4: Sunrises and sunsets paint the sky with colors only nature can create.</p>
-  <p class="styled-paragraph">Paragraph 5: Every tree, river, and mountain tells a story of life, balance, and beauty.</p>
-
-  <button id="btnShowExtra">Show Extra Paragraph</button>
-
-  <p id="extraPara" class="hidden">
-    Nature is the ultimate source of peace and inspiration. From towering mountains to quiet forests, it teaches us to be still and observe. It reminds us that growth takes time, and beauty can be found even in the smallest details. Protecting nature is not just a duty—it’s a way of preserving life itself.
-  </p>
-
-  <!-- Display: none vs block explanation -->
-  <p id="togglePara" class="hidden">
-    This paragraph is a live example of <strong>display: none</strong> and <strong>display: block</strong>.<br><br>
-    When hidden, it uses <code>display: none</code> — it's completely removed from the screen.<br>
-    When visible, it uses <code>display: block</code> — it appears and takes space.<br>
-    This is useful in menus, buttons, modals, etc.
-  </p>
-</div>
-
-<!-- Second Section: Style Change Example -->
-<hr><br>
-<button onclick="myFunction()">Show Style Change Paragraph</button>
-
-<p id="demo" style="display: none;">
-  JavaScript can change the style of any HTML element.<br><br>
-  <button onclick="changeStyle()">Change Style</button>
-</p>
-
-<!-- JavaScript -->
-<script>
-  const btnShowParas = document.getElementById('btnShowParas');
-  const paraContainer = document.getElementById('paraContainer');
-  const btnShowExtra = document.getElementById('btnShowExtra');
-  const extraPara = document.getElementById('extraPara');
-  const togglePara = document.getElementById('togglePara');
-
-  // Show 5 paragraphs + display explanation
-  btnShowParas.addEventListener('click', () => {
-    paraContainer.classList.remove('hidden');
-
-    const paras = paraContainer.querySelectorAll('.styled-paragraph');
-    paras.forEach(p => {
-      p.style.color = 'green';
-      p.style.fontWeight = '600';
-      p.style.fontSize = '16px';
-    });
-
-    togglePara.classList.remove('hidden');
-    alert("Nature-themed paragraphs are now visible and styled!");
-  });
-
-  // Show extra nature paragraph, hide explanation
-  btnShowExtra.addEventListener('click', () => {
-    extraPara.classList.remove('hidden');
-    togglePara.classList.add('hidden');
-    alert("Extra paragraph about nature is now visible!");
-  });
-
-  // Style Change Button Example
-  function myFunction() {
-    const demo = document.getElementById("demo");
-    demo.style.display = "block";
-    demo.style.fontSize = "20px";
-    demo.style.color = "white";
-    demo.style.backgroundColor = "red";
-    alert("Paragraph is now shown with initial styles.");
-  }
-
-  function changeStyle() {
-    const demo = document.getElementById("demo");
-    demo.style.fontSize = "30px";
-    demo.style.color = "white";
-    demo.style.backgroundColor = "green";
-    alert("Style changed to new font size and background!");
-  }
-</script>
-
+  <h1>Online Medicine Store</h1>
+  <div class="products">
+    <div class="product">
+      <a href="paracetamol.html"><img src="https://www.chemist-4-u.com/media/resized/1000/catalog/product/p/a/paracetemol_500_1.jpg"
+        alt="Paracetamol"></a>
+      <p><a href="paracetamol.html">Paracetamol</a></p>
+    </div>
+    <div class="product">
+      <a href="ibuprofen.html"><img src="https://tse4.mm.bing.net/th/id/OIP.o4DFJjJHLWfxMZK6WvFXeQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Ibuprofen"></a>
+      <p><a href="ibuprofen.html">Ibuprofen</a></p>
+    </div>
+    <div class="product">
+      <a href="cetirizine.html"><img src="https://www.chinookmed.com/mas_assets/cache/image/2/3/e/5/9189.Jpg" alt="Cetirizine"></a>
+      <p><a href="cetirizine.html">Cetirizine</a></p>
+    </div>
+    <div class="product">
+      <a href="amoxicillin.html"><img src="https://barakat-pharma.com/wp-content/uploads/2019/09/all_0056_Amoxicillin.jpg
+        " alt="Amoxicillin"></a>
+      <p><a href="amoxicillin.html">Amoxicillin</a></p>
+    </div>
+    <div class="product">
+      <a href="omeprazole.html"><img src="https://tse3.mm.bing.net/th/id/OIP.d7DoLshanxmYRGc2hK2rrgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Omeprazole"></a>
+      <p><a href="omeprazole.html">Omeprazole</a></p>
+    </div>
+  </div>
 </body>
 </html>

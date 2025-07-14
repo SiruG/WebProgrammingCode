@@ -1,0 +1,84 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2; /* Light grey background */
+    color: #333;
+}
+
+header {
+    background-color: #1e90ff; /* Blue header */
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+#products {
+    padding: 20px;
+}
+
+#products h2 {
+    margin-bottom: 20px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items to the start of the line */
+    gap: 20px; /* Space between items */
+}
+
+.product {
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle card shadow */
+}
+
+.product a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from body for links */
+    display: block; /* Make the entire product clickable */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.product p {
+    font-size: 0.8em;
+    color: #666;
+}
+
+footer {
+    background-color: #333; /* Dark grey footer */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative; /* Changed to relative */
+    bottom: 0;
+    width: 100%;
+}
