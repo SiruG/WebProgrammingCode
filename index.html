@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Bakery - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">Local Bakery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="order.html">Order</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome-section centered-welcome">
+      <h2>Welcome to Local Bakery</h2>
+      <p>Enjoy the freshest breads, cakes, and pastries baked daily with love and care!</p>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="image-gallery">
+      <div class="gallery-item">
+        <img src="https://t4.ftcdn.net/jpg/15/10/09/85/360_F_1510098551_f0y3jIT5ErjMClBAKEMoLZSksI7GkxKp.jpg" alt="Bakery Shopfront" />
+        <p>Our Cozy Bakery Shop</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://media.istockphoto.com/id/663898216/photo/fresh-bread-on-shelves-in-bakery.jpg?s=612x612&w=0&k=20&c=YLGc_2wCbYhlKXJIqjqM_MlCWSoDkO-BaiU5W1EavU8=" alt="Bakery Items" />
+        <p>Fresh Bakery Items</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://img.freepik.com/premium-photo/assorted-fancy-cakes-shop-window-cafe_267929-725.jpg" alt="Cake Items" />
+        <p>Delicious Cake Items</p>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="product-list">
+      <h2>Our Fresh Bakes</h2>
+      <div class="products">
+        <a href="product1.html" class="product">
+          <img src="https://inbloombakery.com/wp-content/uploads/2022/04/chocolate-drip-cake-featured-image-500x500.jpg" alt="Chocolate Cake" />
+          <h3>Chocolate Cake</h3>
+          <p>$15.00</p>
+        </a>
+        <a href="product2.html" class="product">
+          <img src="https://butternutbakeryblog.com/wp-content/uploads/2022/02/blueberry-muffins.jpg" alt="Blueberry Muffins" />
+          <h3>Blueberry Muffins</h3>
+          <p>$8.00</p>
+        </a>
+        <a href="product3.html" class="product">
+          <img src="https://shop.provisions.com.au/cdn/shop/products/croissant_2089853b_ce3bcf6e-950f-45ff-b868-9a189e516a7e_grande.jpg?v=1571724498" alt="French Croissant" />
+          <h3>French Croissant</h3>
+          <p>$4.00</p>
+        </a>
+        <a href="product4.html" class="product">
+          <img src="https://therecipecritic.com/wp-content/uploads/2020/02/cheesy_garlic_bread.jpg" alt="Cheese Bread" />
+          <h3>Cheese Bread</h3>
+          <p>$6.00</p>
+        </a>
+        <a href="product5.html" class="product">
+          <img src="https://recipesofholly.com/wp-content/uploads/2020/06/Strawberry-Tart-4.jpg" alt="Strawberry Tart" />
+          <h3>Strawberry Tart</h3>
+          <p>$5.50</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+<section class="contact-section contact-info">
+  <h2>Contact Us</h2>
+  <p><strong>Email:</strong> localbakery@gmail.com</p>
+  <p><strong>Phone:</strong> 9856875245</p>
+  <p><strong>Address:</strong> Bhaktapur, Kausaltar</p>
+  <p><strong>Opening Hours:</strong><br>Mon–Sat: 7 AM – 7 PM<br>Sun: 8 AM – 2 PM</p>
+</section>
+
+
+    <!-- Feedback Section -->
+    <section class="contact-section">
+      <h2>Give Feedback</h2>
+      <form>
+        <label for="name-feedback">Name</label>
+        <input id="name-feedback" type="text" placeholder="Your name" />
+        <label for="rating">Rating</label>
+        <select id="rating">
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Average</option>
+        </select>
+        <label for="comments">Comments</label>
+        <textarea id="comments" rows="4"></textarea>
+        <button class="button">Submit Feedback</button>
+      </form>
+    </section>
+
+    <!-- Order Section -->
+    <section class="contact-section">
+      <h2>Place an Order</h2>
+      <form>
+        <label for="product">Product</label>
+        <input id="product" type="text" placeholder="What would you like to order?" />
+        <label for="quantity">Quantity</label>
+        <input id="quantity" type="number" min="1" />
+        <label for="address">Delivery Address</label>
+        <textarea id="address" rows="3"></textarea>
+        <button class="button">Order Now</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us: <strong>localbakery@gmail.com</strong> | 📞 +977 9856875245</p>
+    <p>&copy; 2025 Local Bakery. All rights reserved.</p>
+  </footer>
+</body>
+</html>

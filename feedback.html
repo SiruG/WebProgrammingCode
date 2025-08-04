@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback - Local Bakery</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Unified stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">Local Bakery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="order.html">Order</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Customer Feedback</h2>
+      <form action="#" method="post" class="form-box">
+        <label for="item">Select an item to give feedback on:</label>
+        <select id="item" name="item" required>
+          <option value="" disabled selected>-- Select an item --</option>
+          <option value="Chocolate Cake">Chocolate Cake</option>
+          <option value="Blueberry Muffins">Blueberry Muffins</option>
+          <option value="French Croissant">French Croissant</option>
+          <option value="Cheese Bread">Cheese Bread</option>
+          <option value="Strawberry Tart">Strawberry Tart</option>
+        </select>
+
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" name="feedback" placeholder="Write your feedback here..." required></textarea>
+        <p class="note">Your feedback will be appreciated.</p>
+
+        <button type="submit" class="button button-cta">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us: <strong>localbakery@gmail.com</strong> | 📞 +977 9856875245</p>
+    <p>&copy; 2025 Local Bakery. All rights reserved.</p>
+  </footer>
+</body>
+</html>
