@@ -2,65 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Order - Local Bakery</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
 
-  <!-- Unified stylesheet -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .order-form {
+      max-width: 600px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: #343a40;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1 class="logo">Local Bakery</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="contact.html">Contact</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="order.html">Order</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="order-form" style="max-width: 600px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
-      <h2>Order Items</h2>
-      <form action="#" method="post">
-        <label for="order-name">Name:</label>
-        <input type="text" id="order-name" name="order-name" placeholder="Your full name" required style="width: 100%; padding: 8px; margin: 5px 0 15px;" />
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand logo" href="index.html">Local Bakery</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavOrder" aria-controls="navbarNavOrder" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavOrder">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link active" href="order.html">Order</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-        <label for="order-email">Email:</label>
-        <input type="email" id="order-email" name="order-email" placeholder="Your email" required style="width: 100%; padding: 8px; margin: 5px 0 15px;" />
+<main>
+  <section class="order-form">
+    <h2 class="mb-4 text-center">Order Items</h2>
+    <form action="#" method="post" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="order-name" class="form-label">Name:</label>
+        <input type="text" id="order-name" name="order-name" class="form-control" placeholder="Your full name" required />
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
 
-        <label for="order-phone">Phone Number:</label>
-        <input type="tel" id="order-phone" name="order-phone" placeholder="Your phone number" required style="width: 100%; padding: 8px; margin: 5px 0 15px;" />
+      <div class="mb-3">
+        <label for="order-email" class="form-label">Email:</label>
+        <input type="email" id="order-email" name="order-email" class="form-control" placeholder="Your email" required />
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
 
-        <label for="order-item">Select Item:</label>
-        <select id="order-item" name="order-item" required style="width: 100%; padding: 8px; margin: 5px 0 15px;">
-          <option value="">-- Select an item --</option>
+      <div class="mb-3">
+        <label for="order-phone" class="form-label">Phone Number:</label>
+        <input type="tel" id="order-phone" name="order-phone" class="form-control" placeholder="Your phone number" required />
+        <div class="invalid-feedback">Please enter your phone number.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="order-item" class="form-label">Select Item:</label>
+        <select id="order-item" name="order-item" class="form-select" required>
+          <option value="" disabled selected>-- Select an item --</option>
           <option value="Chocolate Cake">Chocolate Cake</option>
           <option value="Blueberry Muffins">Blueberry Muffins</option>
           <option value="French Croissant">French Croissant</option>
           <option value="Cheese Bread">Cheese Bread</option>
           <option value="Strawberry Tart">Strawberry Tart</option>
         </select>
+        <div class="invalid-feedback">Please select an item.</div>
+      </div>
 
-        <label for="order-quantity">Quantity:</label>
-        <input type="number" id="order-quantity" name="order-quantity" min="1" max="20" value="1" required style="width: 100%; padding: 8px; margin: 5px 0 15px;" />
+      <div class="mb-3">
+        <label for="order-quantity" class="form-label">Quantity:</label>
+        <input type="number" id="order-quantity" name="order-quantity" class="form-control" min="1" max="20" value="1" required />
+        <div class="invalid-feedback">Please enter a quantity (1-20).</div>
+      </div>
 
-        <label for="order-address">Delivery Address:</label>
-        <textarea id="order-address" name="order-address" rows="3" placeholder="Enter delivery address" required style="width: 100%; padding: 8px; margin: 5px 0 15px;"></textarea>
+      <div class="mb-3">
+        <label for="order-address" class="form-label">Delivery Address:</label>
+        <textarea id="order-address" name="order-address" class="form-control" rows="3" placeholder="Enter delivery address" required></textarea>
+        <div class="invalid-feedback">Please provide your delivery address.</div>
+      </div>
 
-        <!-- Unified button -->
-        <button type="submit" class="button button-cta">Place Order</button>
-      </form>
-    </section>
-  </main>
+      <button type="submit" class="btn btn-primary w-100">Place Order</button>
+    </form>
+  </section>
+</main>
 
-  <footer>
-    <p>Contact us: <strong>localbakery@gmail.com</strong> | 📞 +977 9856875245</p>
-    <p>&copy; 2025 Local Bakery. All rights reserved.</p>
-  </footer>
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+  <p>Contact us: <strong>localbakery@gmail.com</strong> | 📞 +977 9856875245</p>
+  <p class="mb-0">&copy; 2025 Local Bakery. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(() => {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation')
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+      form.classList.add('was-validated')
+    }, false)
+  })
+})();
+</script>
 </body>
 </html>

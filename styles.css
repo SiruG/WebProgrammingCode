@@ -64,18 +64,16 @@ nav {
   gap: 1rem;
 }
 
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
+/* Override Bootstrap nav-link default blue color */
+.nav-link {
+  color: var(--text-light) !important;  /* Cocoa Brown */
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s;
 }
 
-nav a:hover,
-nav a:focus-visible {
-  color: #ffdd57;
-  outline: none;
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--primary) !important;  /* Soft Peach on hover */
+  text-decoration: none;
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -218,6 +216,11 @@ main {
 
 .product-detail a:hover {
   color: var(--primary);
+}
+
+.product-list h2 {
+  margin: 30px 0;
+  text-align: center;
 }
 
 /* ===== FORMS (Feedback / Contact / Order) ===== */
@@ -385,4 +388,37 @@ footer {
     width: 90vw;
     height: 240px;
   }
+}
+
+/* ==== OVERRIDES FOR BOOTSTRAP COLORS ==== */
+
+/* Override Bootstrap nav-link default blue color */
+.nav-link {
+  color: var(--text-light) !important;  /* Cocoa Brown */
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--primary) !important;  /* Soft Peach on hover */
+  text-decoration: none;
+}
+
+/* Override Bootstrap button primary color */
+.btn-primary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #3a241e;  /* Darker brown on hover */
+  border-color: #3a241e;
+  box-shadow: none;
+}
+
+/* Override link color inside buttons or anchors */
+.btn-primary:focus-visible {
+  outline-color: var(--primary);
 }
