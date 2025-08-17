@@ -59,7 +59,13 @@
 <main>
   <section class="form-section">
     <h2 class="mb-4 text-center">Customer Feedback</h2>
-    <form action="#" method="post" class="needs-validation" novalidate>
+
+    <!-- Success Message -->
+    <div id="feedbackSuccess" class="alert alert-success text-center d-none" role="alert">
+      ✅ Your feedback has been submitted successfully! Thank you for helping us improve.
+    </div>
+
+    <form id="feedbackForm" class="needs-validation" novalidate>
       
       <div class="mb-3">
         <label for="item" class="form-label">Select an item to give feedback on:</label>
@@ -95,20 +101,31 @@
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Success Message Script -->
 <script>
-// Example Bootstrap form validation
 (() => {
-  'use strict'
-  const forms = document.querySelectorAll('.needs-validation')
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-      form.classList.add('was-validated')
-    }, false)
-  })
+  'use strict';
+  const form = document.getElementById('feedbackForm');
+  const successMsg = document.getElementById('feedbackSuccess');
+
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      event.preventDefault(); // Stop actual submission
+      successMsg.classList.remove('d-none'); // Show success alert
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        successMsg.classList.add('d-none');
+      }, 3000);
+
+      form.reset(); // Clear fields
+      form.classList.remove('was-validated'); // Remove validation styles
+    }
+    form.classList.add('was-validated');
+  });
 })();
 </script>
 
